@@ -2,9 +2,9 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title> 💍</title>
+  <title> ❤️</title>
 
-  <!-- WA & Mobile Friendly -->
+  <!-- Mobile friendly -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -13,9 +13,10 @@
       min-height: 100vh;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
       padding: 15px;
     }
 
@@ -23,38 +24,45 @@
       background: white;
       width: 100%;
       max-width: 420px;
-      padding: 30px 20px;
-      border-radius: 20px;
+      padding: 25px 20px 30px;
+      border-radius: 22px;
       text-align: center;
       box-shadow: 0 15px 35px rgba(0,0,0,0.2);
       animation: fadeIn 1.2s ease;
+      z-index: 2;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 18px;
+      margin-bottom: 15px;
     }
 
     h1 {
       color: #e91e63;
-      font-size: 26px;
-      margin-bottom: 10px;
+      font-size: 24px;
+      margin: 10px 0;
     }
 
     p {
       color: #555;
       font-size: 17px;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin: 10px 0;
     }
 
     h2 {
-      font-size: 22px;
-      margin: 20px 0;
+      font-size: 21px;
+      margin: 20px 0 10px;
     }
 
     button {
       width: 100%;
-      margin: 10px 0;
       padding: 14px;
       font-size: 18px;
       border: none;
       border-radius: 30px;
+      margin-top: 12px;
       cursor: pointer;
     }
 
@@ -68,35 +76,65 @@
       color: #333;
     }
 
+    /* Animasi masuk */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HATI BETERBANGAN */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      animation: fly 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      20% { opacity: 1; }
+      100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- MUSIK ROMANTIS -->
 <audio autoplay loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_7e1c4f5c9c.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/audio/2023/03/28/audio_1c5a2f9b3d.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card">
+  <img src="foto-kita.jpg" alt="Kita berdua">
+
   <h1>Hai, Sayang ❤️</h1>
 
   <p>
-    Aku nggak pandai merangkai kata,<br>
-    tapi aku pandai mencintaimu.<br><br>
-    Jadi izinkan aku bertanya dengan jujur:
+    Aku tidak punya kata yang rumit.<br>
+    Aku hanya tahu satu hal:
+  </p>
+
+  <p>
+    Aku nyaman sama kamu.<br>
+    Aku ingin menua dengan kamu.
   </p>
 
   <h2>Maukah kamu menikah denganku? 💍</h2>
 
-  <button class="yes" onclick="yesClick()">Yes, aku mau 💖</button>
-  <button class="no" id="noBtn" onmouseover="kabur()" ontouchstart="kabur()">No 🙈</button>
+  <button class="yes" onclick="yesClick()">Iya, aku mau 💖</button>
+  <button class="no" id="noBtn" onmouseover="kabur()" ontouchstart="kabur()">Enggak 🙈</button>
 </div>
 
 <script>
+  // Tombol NO kabur
   function kabur() {
     const btn = document.getElementById("noBtn");
     const maxX = window.innerWidth - btn.offsetWidth - 20;
@@ -106,10 +144,7 @@
     btn.style.top = Math.random() * maxY + "px";
   }
 
+  // Klik YES
   function yesClick() {
-    alert("Terima kasih sudah memilih aku 💕\nAku janji akan selalu menjagamu 🤍");
+    alert("Terima kasih sudah memilih aku ❤️\nMulai hari ini, aku pilih kamu… selamanya 💍");
   }
-</script>
-
-</body>
-</html>
